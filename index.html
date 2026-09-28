@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f766e" />
+    <title>Restaurant Inventory & Operations</title>
+    <meta name="description" content="Multi-screen restaurant inventory, purchasing, stock counts, wastage, and kitchen operations management system." />
+    <meta property="og:title" content="Restaurant Inventory & Operations" />
+    <meta property="og:description" content="Multi-screen restaurant inventory, purchasing, stock counts, wastage, and kitchen operations management system." />
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+    <!-- Tailwind CSS with approved theme palette -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eaedff",
+              "primary-container": "#0f766e",
+              "primary-fixed-dim": "#80d5cb",
+              "on-secondary-container": "#586377",
+              "on-primary": "#ffffff",
+              "tertiary": "#005d42",
+              "inverse-on-surface": "#eef0ff",
+              "tertiary-container": "#047857",
+              "inverse-surface": "#283044",
+              "surface-container-high": "#e2e7ff",
+              "error-container": "#ffdad6",
+              "on-primary-container": "#a3faef",
+              "on-secondary": "#ffffff",
+              "on-secondary-fixed": "#111c2d",
+              "on-tertiary-fixed-variant": "#00513a",
+              "surface-variant": "#dae2fd",
+              "on-surface": "#131b2e",
+              "tertiary-fixed-dim": "#7bd8b1",
+              "surface-container-lowest": "#ffffff",
+              "on-error-container": "#93000a",
+              "background": "#faf8ff",
+              "primary-fixed": "#9cf2e8",
+              "surface-container-highest": "#dae2fd",
+              "on-tertiary-fixed": "#002115",
+              "on-tertiary-container": "#9ffdd3",
+              "on-primary-fixed-variant": "#00504a",
+              "surface-bright": "#faf8ff",
+              "error": "#ba1a1a",
+              "surface-dim": "#d2d9f4",
+              "surface": "#faf8ff",
+              "surface-container-low": "#f2f3ff",
+              "secondary": "#545f73",
+              "inverse-primary": "#80d5cb",
+              "secondary-fixed": "#d8e3fb",
+              "on-secondary-fixed-variant": "#3c475a",
+              "on-background": "#131b2e",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#00201d",
+              "outline-variant": "#bdc9c6",
+              "tertiary-fixed": "#97f5cc",
+              "on-tertiary": "#ffffff",
+              "surface-tint": "#006a63",
+              "primary": "#005c55",
+              "on-surface-variant": "#3e4947",
+              "outline": "#6e7977",
+              "secondary-container": "#d5e0f8",
+              "secondary-fixed-dim": "#bcc7de"
+            },
+            borderRadius: {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            spacing: {
+              "space-lg": "1.25rem",
+              "margin-desktop": "2rem",
+              "space-xl": "2rem",
+              "space-xs": "0.25rem",
+              "space-sm": "0.5rem",
+              "gutter-lg": "1.5rem",
+              "margin-mobile": "1rem",
+              "margin": "1.5rem",
+              "gutter": "1rem",
+              "space-md": "0.75rem"
+            },
+            fontFamily: {
+              "label-md": ["Geist", "sans-serif"],
+              "body-lg": ["Hanken Grotesk", "sans-serif"],
+              "headline-lg-mobile": ["Hanken Grotesk", "sans-serif"],
+              "label-lg": ["Geist", "sans-serif"],
+              "label-sm": ["Geist", "sans-serif"],
+              "body-md": ["Hanken Grotesk", "sans-serif"],
+              "headline-md": ["Hanken Grotesk", "sans-serif"],
+              "body-sm": ["Hanken Grotesk", "sans-serif"],
+              "headline-xl": ["Hanken Grotesk", "sans-serif"],
+              "display-lg": ["Hanken Grotesk", "sans-serif"],
+              "headline-lg": ["Hanken Grotesk", "sans-serif"],
+              "numeric-table": ["Geist", "monospace"]
+            },
+            fontSize: {
+              "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+              "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+              "headline-lg-mobile": ["20px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+              "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+              "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
+              "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+              "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }],
+              "headline-xl": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+              "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+              "headline-lg": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+              "numeric-table": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(110, 121, 119, 0.25);
+        border-radius: 9999px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(110, 121, 119, 0.45);
+      }
+    </style>
+  </head>
+  <body class="bg-surface font-body-md text-body-md text-on-surface antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
